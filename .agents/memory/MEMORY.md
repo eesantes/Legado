@@ -1,0 +1,1 @@
+- [Android build delivery](android-build-delivery.md) — Expo Launch in this workspace does not produce Google Play/APK artifacts; Android compilation needs an external build step.

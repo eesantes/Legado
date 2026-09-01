@@ -1,0 +1,24 @@
+kind = "mobile"
+previewPath = "/"
+title = "Legado"
+description = "Aplicativo Android para acessar sites de anime em uma experiência protegida e intuitiva, com perfil local persistente, troca rápida entre fontes, navegação interna allowlisted, bloqueio de anúncios e pop-ups e controles de reprodução."
+version = "1.0.0"
+id = "artifacts/legado"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/" ]
+localPort = 21324
+
+[services.development]
+run = "pnpm --filter @workspace/legado run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/legado", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/legado", "run", "serve" ]
+
+[services.env]
+PORT = "21324"
+BASE_PATH = "/"
